@@ -3,7 +3,7 @@ const crypto = require('crypto');
 const fs = require('fs');
 
 const app = express();
-const port = 3000;
+const port = 25778;
 
 // File path for storing player data
 const dataFilePath = 'players.json';
@@ -29,7 +29,7 @@ let players = loadPlayerData();
 app.get('/generate_token', (req, res) => {
   let token = crypto.randomBytes(16).toString('hex');
   let seed = Math.floor(new Date().getTime() / 1000); // Unix Time Stamp
-  players[token] = { balance: 9999999, seed: seed };
+  players[token] = { balance: 100, seed: seed };
   savePlayerData(players);
   res.send(`Welcome to HaXasino 2! Your authentication token is: ${token}\nYour balance is: $100\n`);
 });
@@ -70,4 +70,9 @@ app.get('/spin', (req, res) => {
 
 app.listen(port, () => {
   console.log(`Casino app listening on port ${port}`);
+});
+
+
+app.get('/flag', (req, res) => {
+  res.send(' CTF{r0z3hr1v4ck4} ');
 });
