@@ -5,6 +5,12 @@ const fs = require('fs');
 const app = express();
 const port = 25778;
 
+
+//
+// HAXASÍNO 2
+//
+
+
 // File path for storing player data
 const dataFilePath = 'players.json';
 
@@ -72,6 +78,11 @@ app.listen(port, () => {
   console.log(`Casino app listening on port ${port}`);
 });
 
+
+
+//
+//HTTP Warmup
+//
 
 app.get('/flag', (req, res) => {
   res.send(' CTF{r0z3hr1v4ck4} ');
