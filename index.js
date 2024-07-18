@@ -37,7 +37,7 @@ app.get('/generate_token', (req, res) => {
   let seed = Math.floor(new Date().getTime() / 1000); // Unix Time Stamp
   players[token] = { balance: 100, seed: seed };
   savePlayerData(players);
-  res.send(`Welcome to HaXasino 2! Your authentication token is: ${token}\nYour balance is: $100\n`);
+  res.send(`Welcome to Kaktusíno 2! Your authentication token is: ${token}\nYour balance is: $100\n`);
 });
 
 // Spin action
