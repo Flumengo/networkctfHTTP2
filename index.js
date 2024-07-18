@@ -57,6 +57,10 @@ app.get('/spin', (req, res) => {
     return res.status(400).json({ error: 'Insufficient funds' });
   }
 
+  if (bet < 1) {
+    return res.status(400).json({ error: 'Fixed in Kaktusíno 2!' });
+  }
+
   // Simulate the spin
   const win = Math.random() < 0.5;
   if (win) {
